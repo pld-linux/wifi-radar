@@ -1,4 +1,5 @@
 Summary:	Utility for managing WiFi profiles
+Summary(pl):	Narzedzie do zarz±dzania profilami WiFi
 Name:		wifi-radar
 Version:	1.9.4
 Release:	0.9
@@ -25,6 +26,14 @@ your preferred networks. At boot time, running WiFi Radar will
 automatically scan for an available preferred network and connect to
 it. You can drag and drop your preferred networks to arrange the
 profile priority.
+
+%description -l pl
+WiFi Radar to narzêdzie do zarz±dzania profilami po³±czeñ WiFi
+napisany przy u¿yciu Python/PyGTK2. Umo¿liwia skanowanie w poszukiwaniu
+dostêpnych sieci i tworzyæ dla nich profile. Podczas uruchamiania
+komputera WiFi Radar automatycznie przeskanuje w poszukiwaniu
+preferowanej sieci i pol±czy siê z ni±. Mo¿na u¿yæ przeci±gania aby
+zorganizowaæ priorytety profili.
 
 %prep
 %setup -q
