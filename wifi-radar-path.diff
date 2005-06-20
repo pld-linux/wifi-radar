@@ -1,0 +1,29 @@
+--- wifi-radar.orig	2005-03-31 08:27:48.280401640 +0200
++++ wifi-radar	2005-03-31 08:29:09.387071552 +0200
+@@ -26,19 +26,19 @@
+ # You may set this to true for cards that require the interface to be brought up first
+ IFUP_REQUIRED	= False
+ # Where the conf file is could be different for your distro.
+-CONF_FILE		= "/etc/conf.d/wifi-radar.conf"
+-IWLIST_COMMAND	= "iwlist"
+-IWCONFIG_COMMAND= "iwconfig"
+-IFCONFIG_COMMAND= "ifconfig"
+-ROUTE_COMMAND	= "route"
++CONF_FILE		= "/etc/wifi-radar.conf"
++IWLIST_COMMAND	= "/sbin/iwlist"
++IWCONFIG_COMMAND= "/sbin/iwconfig"
++IFCONFIG_COMMAND= "/sbin/ifconfig"
++ROUTE_COMMAND	= "/sbin/route"
+ # X1000 Linux has a say command (text to speach) to accounce connecting to networks.
+ # Set the SPEAK_UP to false if you do not have or want this.
+ SAY_COMMAND		= "say"
+ # DHCP FUN :)
+ DHCP_TIMEOUT	= 30
+ # For distros that use dhcpcd
+-DHCP_COMMAND	= "dhcpcd"
+-DHCP_KILL_COMMAND="dhcpcd -k"
++DHCP_COMMAND	= "/sbin/dhcpcd"
++DHCP_KILL_COMMAND="/sbin/dhcpcd -k"
+ DHCP_ARGS		= "-S -t %s -h `hostname` " % DHCP_TIMEOUT
+ DHCP_PIDFILE	= "/var/run/dhcpcd-%s.pid" % INTERFACE
+ # For distros that use dhclient
