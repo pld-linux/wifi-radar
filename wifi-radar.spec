@@ -1,8 +1,10 @@
+# TODO:
+# - config should be accesible with some better rights...
 Summary:	Utility for managing WiFi profiles
 Summary(pl):	Narzedzie do zarz±dzania profilami WiFi
 Name:		wifi-radar
 Version:	1.9.4
-Release:	0.9
+Release:	1
 License:	GPL v2
 Group:		Networking/Admin
 Source0:	http://www.bitbuilder.com/wifi_radar/bins/%{name}-%{version}.tar.gz
@@ -57,6 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog README TODO WHISHLIST
 %attr(755,root,root) %{_sbindir}/*
+# rights should be changed? taken from SuSE
 %attr(600,root,root) %config(noreplace) %{_sysconfdir}/wifi-radar.conf
 %{_desktopdir}/wifi-radar.desktop
 %{_pixmapsdir}/wifi-radar.png
