@@ -3,12 +3,12 @@
 Summary:	Utility for managing WiFi profiles
 Summary(pl):	Narzêdzie do zarz±dzania profilami WiFi
 Name:		wifi-radar
-Version:	1.9.4
+Version:	1.9.6
 Release:	1
 License:	GPL v2
 Group:		Networking/Admin
-Source0:	http://www.bitbuilder.com/wifi_radar/bins/%{name}-%{version}.tar.gz
-# Source0-md5:	4fce5878322868805fcda8f2f7c4232e
+Source0:	http://wifi-radar.systemimager.org/pub/%{name}-%{version}.tar.bz2
+# Source0-md5:	4ab4cc22d68dd0655ab28b75c7aa6248
 Source1:	%{name}.conf
 Source2:	%{name}.desktop
 Source3:	%{name}-128.png
@@ -39,7 +39,7 @@ przeci±gania aby zorganizowaæ priorytety profili.
 
 %prep
 %setup -q
-%patch0
+%patch0 -p1
 
 %build
 
@@ -57,7 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO WHISHLIST
+%doc AUTHORS ChangeLog README TODO
 %attr(755,root,root) %{_sbindir}/*
 # rights should be changed? taken from SuSE
 %attr(600,root,root) %config(noreplace) %{_sysconfdir}/wifi-radar.conf
