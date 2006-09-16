@@ -17,6 +17,7 @@ URL:		http://www.bitbuilder.com/wifi_radar/
 Requires:	dhcpcd
 Requires:	net-tools
 Requires:	python-pygtk-gtk >= 2.4.0
+Requires:	python-pycairo >= 1.2.2
 Requires:	wireless-tools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
