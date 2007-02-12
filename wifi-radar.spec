@@ -1,7 +1,7 @@
 # TODO:
 # - config should be accesible with some better rights...
 Summary:	Utility for managing WiFi profiles
-Summary(pl.UTF-8):   Narzędzie do zarządzania profilami WiFi
+Summary(pl.UTF-8):	Narzędzie do zarządzania profilami WiFi
 Name:		wifi-radar
 Version:	1.9.6
 Release:	1
