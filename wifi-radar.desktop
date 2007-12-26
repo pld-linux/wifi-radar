@@ -1,7 +1,6 @@
 [Desktop Entry]
 Categories=Network;Configuration;
 Comment=
-Encoding=UTF-8
 Exec=/usr/sbin/wifi-radar
 GenericName=WiFi Radar
 Icon=wifi-radar
