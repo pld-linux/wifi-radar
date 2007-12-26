@@ -1,16 +1,16 @@
 [Desktop Entry]
-Categories=Network;Configuration;
-Comment=
+Comment=Managing WiFi profiles
+Comment[pl]=Zarządzanie profilami WiFi
 Exec=/usr/sbin/wifi-radar
 GenericName=WiFi Radar
 Icon=wifi-radar
-MimeType=
 Name=WiFi Profile Configuration
-Path=
+Name[pl]=Konfiguracja profili WiFi
 StartupNotify=false
 Terminal=false
-TerminalOptions=
 Type=Application
+Categories=Network;Settings;
 X-DCOP-ServiceType=none
 X-KDE-SubstituteUID=true
 X-KDE-Username=root
+# vi:encoding=utf-8
