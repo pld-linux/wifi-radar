@@ -1,5 +1,8 @@
 # TODO:
 # - config should be accesible with some better rights...
+# NOTE:
+# - there is some GNOME/PAM integration described at http://wifi-radar.systemimager.org/
+# - there are %{name}.{conf,desktop} files in tarball too
 Summary:	Utility for managing WiFi profiles
 Summary(pl.UTF-8):	Narzędzie do zarządzania profilami WiFi
 Name:		wifi-radar
