@@ -1,21 +1,18 @@
 diff -Nur wifi-radar-1.9.6.orig/wifi-radar wifi-radar-1.9.6/wifi-radar
 --- wifi-radar-1.9.6.orig/wifi-radar	2006-03-27 23:41:40.000000000 +0100
 +++ wifi-radar-1.9.6/wifi-radar	2006-07-21 14:52:19.000000000 +0100
-@@ -53,12 +53,12 @@
- # Where the conf file should live could be different for your distro.  Please change
- # at install time with "make install sysconfdir=/etc/wifi-radar" or similar. -BEF-
+@@ -57,10 +57,10 @@
  #
--CONF_FILE		 = "/etc/wifi-radar/wifi-radar.conf"
-+CONF_FILE        = "/etc/wifi-radar.conf"
+ CONF_FILE		 = "/etc/wifi-radar.conf"
  
--IWLIST_COMMAND	 = "LC_MESSAGES=C iwlist"
--IWCONFIG_COMMAND = "LC_MESSAGES=C iwconfig"
--IFCONFIG_COMMAND = "LC_MESSAGES=C ifconfig"
--ROUTE_COMMAND	 = "LC_MESSAGES=C route"
-+IWLIST_COMMAND   = "/sbin/iwlist"
+-IWLIST_COMMAND	 = "iwlist"
+-IWCONFIG_COMMAND = "iwconfig"
+-IFCONFIG_COMMAND = "ifconfig"
+-ROUTE_COMMAND	 = "route"
++IWLIST_COMMAND	 = "/sbin/iwlist"
 +IWCONFIG_COMMAND = "/sbin/iwconfig"
 +IFCONFIG_COMMAND = "/sbin/ifconfig"
-+ROUTE_COMMAND    = "/sbin/route"
++ROUTE_COMMAND	 = "/sbin/route"
  
- # X1000 Linux has a say command (text to speach) to accounce connecting to networks.
- # Set the SPEAK_UP to false if you do not have or want this.
+ os.environ['LC_MESSAGES'] = 'C'
+ 
