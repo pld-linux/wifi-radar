@@ -3,12 +3,12 @@
 Summary:	Utility for managing WiFi profiles
 Summary(pl.UTF-8):	Narzędzie do zarządzania profilami WiFi
 Name:		wifi-radar
-Version:	1.9.6
+Version:	1.9.9
 Release:	1
 License:	GPL v2
 Group:		Networking/Admin
 Source0:	http://wifi-radar.systemimager.org/pub/%{name}-%{version}.tar.bz2
-# Source0-md5:	4ab4cc22d68dd0655ab28b75c7aa6248
+# Source0-md5:	fdcf862da67e0624dcca5d71d12caddf
 Source1:	%{name}.conf
 Source2:	%{name}.desktop
 Source3:	%{name}-128.png
@@ -46,21 +46,27 @@ przeciągania aby zorganizować priorytety profili.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_sysconfdir},%{_desktopdir},%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_sysconfdir},%{_desktopdir},%{_pixmapsdir},%{_mandir}/man{1,5}}
 
 install wifi-radar wifi-radar.sh $RPM_BUILD_ROOT%{_sbindir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
-install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}/%{name}.png
+install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
+install pixmaps/wifi{-radar.*g,_radar_32x32.png} $RPM_BUILD_ROOT%{_pixmapsdir}
+install %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install %{name}.conf.5 $RPM_BUILD_ROOT%{_mandir}/man5
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README TODO
+%doc CHANGE.LOG CREDITS README README.WPA-Mini-HOWTO.txt TODO
 %attr(755,root,root) %{_sbindir}/*
 # rights should be changed? taken from SuSE
 %attr(600,root,root) %config(noreplace) %{_sysconfdir}/wifi-radar.conf
 %{_desktopdir}/wifi-radar.desktop
-%{_pixmapsdir}/wifi-radar.png
+%{_pixmapsdir}/*.png
+%{_pixmapsdir}/*.svg
+%{_mandir}/man1/*
+%{_mandir}/man5/*
