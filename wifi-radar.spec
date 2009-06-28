@@ -6,17 +6,16 @@
 Summary:	Utility for managing WiFi profiles
 Summary(pl.UTF-8):	Narzędzie do zarządzania profilami WiFi
 Name:		wifi-radar
-Version:	1.9.9
+Version:	2.0.s02
 Release:	1
 License:	GPL v2
 Group:		Networking/Admin
-Source0:	http://wifi-radar.systemimager.org/pub/%{name}-%{version}.tar.bz2
-# Source0-md5:	fdcf862da67e0624dcca5d71d12caddf
+Source0:	http://wifi-radar.berlios.de/pub/%{name}-%{version}.tar.bz2
+# Source0-md5:	7ff58f9d13c1d56e1be0fa1d1ea96beb
 Source1:	%{name}.conf
 Source2:	%{name}.desktop
 Source3:	%{name}-128.png
-Patch0:		%{name}-path.diff
-URL:		http://www.bitbuilder.com/wifi_radar/
+URL:		http://wifi-radar.systemimager.org/
 Requires:	dhcpcd
 Requires:	net-tools
 Requires:	python-pygtk-gtk >= 2.4.0
@@ -43,7 +42,6 @@ przeciągania aby zorganizować priorytety profili.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 
@@ -56,15 +54,15 @@ install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
 install pixmaps/wifi{-radar.*g,_radar_32x32.png} $RPM_BUILD_ROOT%{_pixmapsdir}
-install %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1
-install %{name}.conf.5 $RPM_BUILD_ROOT%{_mandir}/man5
+install man/man1/%{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install man/man5/%{name}.conf.5 $RPM_BUILD_ROOT%{_mandir}/man5
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGE.LOG CREDITS README README.WPA-Mini-HOWTO.txt TODO
+%doc docs/*
 %attr(755,root,root) %{_sbindir}/*
 # rights should be changed? taken from SuSE
 %attr(600,root,root) %config(noreplace) %{_sysconfdir}/wifi-radar.conf
