@@ -22,6 +22,7 @@ Requires:	net-tools
 Requires:	python-pycairo >= 1.2.2
 Requires:	python-pygtk-gtk >= 2.4.0
 Requires:	wireless-tools
+Suggests:	sudo
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
