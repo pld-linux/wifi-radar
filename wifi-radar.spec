@@ -6,20 +6,20 @@
 Summary:	Utility for managing WiFi profiles
 Summary(pl.UTF-8):	Narzędzie do zarządzania profilami WiFi
 Name:		wifi-radar
-Version:	2.0.s02
+Version:	2.0.s07
 Release:	1
-License:	GPL v2
+License:	GPL v2+
 Group:		Networking/Admin
-Source0:	http://wifi-radar.berlios.de/pub/%{name}-%{version}.tar.bz2
-# Source0-md5:	7ff58f9d13c1d56e1be0fa1d1ea96beb
+Source0:	http://download.berlios.de/wifi-radar/%{name}-%{version}.tar.bz2
+# Source0-md5:	f68e0f63fd3b03cd4b669f1c06734303
 Source1:	%{name}.conf
 Source2:	%{name}.desktop
 Source3:	%{name}-128.png
 URL:		http://wifi-radar.systemimager.org/
 Requires:	dhcpcd
 Requires:	net-tools
-Requires:	python-pygtk-gtk >= 2.4.0
 Requires:	python-pycairo >= 1.2.2
+Requires:	python-pygtk-gtk >= 2.4.0
 Requires:	wireless-tools
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -47,9 +47,10 @@ przeciągania aby zorganizować priorytety profili.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_sysconfdir},%{_desktopdir},%{_pixmapsdir},%{_mandir}/man{1,5}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_sbindir},%{_sysconfdir},%{_desktopdir},%{_pixmapsdir},%{_mandir}/man{1,5}}
 
-install wifi-radar wifi-radar.sh $RPM_BUILD_ROOT%{_sbindir}
+install wifi-radar $RPM_BUILD_ROOT%{_sbindir}
+install wifi-radar.sh $RPM_BUILD_ROOT%{_bindir}
 install %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}
 install %{SOURCE2} $RPM_BUILD_ROOT%{_desktopdir}
 install %{SOURCE3} $RPM_BUILD_ROOT%{_pixmapsdir}
@@ -63,11 +64,12 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc docs/*
-%attr(755,root,root) %{_sbindir}/*
+%attr(755,root,root) %{_sbindir}/wifi-radar
+%attr(755,root,root) %{_bindir}/wifi-radar.sh
 # rights should be changed? taken from SuSE
 %attr(600,root,root) %config(noreplace) %{_sysconfdir}/wifi-radar.conf
 %{_desktopdir}/wifi-radar.desktop
 %{_pixmapsdir}/*.png
 %{_pixmapsdir}/*.svg
-%{_mandir}/man1/*
-%{_mandir}/man5/*
+%{_mandir}/man1/wifi-radar.1*
+%{_mandir}/man5/wifi-radar.conf.5*

@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment=Managing WiFi profiles
 Comment[pl]=Zarządzanie profilami WiFi
-Exec=/usr/sbin/wifi-radar
+Exec=/usr/bin/wifi-radar.sh
 GenericName=WiFi Radar
 Icon=wifi-radar
 Name=WiFi Profile Configuration
