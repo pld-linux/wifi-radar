@@ -8,7 +8,7 @@ Summary:	Utility for managing WiFi profiles
 Summary(pl.UTF-8):	Narzędzie do zarządzania profilami WiFi
 Name:		wifi-radar
 Version:	2.0.s08
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Networking/Admin
 Source0:	http://download.berlios.de/wifi-radar/%{name}-%{version}.tar.bz2
