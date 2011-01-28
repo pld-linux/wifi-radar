@@ -17,6 +17,7 @@ Source1:	%{name}.conf
 Source2:	%{name}.desktop
 Source3:	%{name}-128.png
 URL:		http://wifi-radar.systemimager.org/
+BuildRequires:	rpm-pythonprov
 Requires:	dhcpcd
 Requires:	net-tools
 Requires:	python-pycairo >= 1.2.2
